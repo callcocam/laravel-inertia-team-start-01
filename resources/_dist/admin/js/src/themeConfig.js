@@ -30,9 +30,6 @@ const themeConfig = {
     sidebarCollapsed  : false,       // options[Boolean] : true, false(default)
     theme             : 'light',     // options[String]  : "light"(default), "dark", "semi-dark"
 
-    // Not required yet - WIP
-    userInfoLocalStorageKey: 'userInfo'
-
     // NOTE: themeTour will be disabled in screens < 1200. Please refer docs for more info.
 }
 

@@ -1,42 +1,27 @@
 <template>
     <div>
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="/">
-                    {{title}}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" :aria-label=" __('Toggle navigation')">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <call-link v-if="route().check('admin')" :href="route('admin')">Dashboard</call-link>
-                            <call-link v-if="route().check('users.index')" :href="route('users.index')">Users</call-link>
-                            <call-link v-if="route().check('admin.about')" :href="route('admin.about')">About</call-link>
-                        </li>
-                    </ul>
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        <li class="nav-item">
-                            <call-link class="nav-link" :href="route('logout')" method="post">{{ __('Logout') }}</call-link>
-                        </li>
-                    </ul>
+       <HeaderComponent />
+       <SearchListComponent />
+        <ul class="main-search-list-defaultlist-other-list d-none">
+            <li class="auto-suggestion d-flex align-items-center justify-content-between cursor-pointer"><a class="d-flex align-items-center justify-content-between w-100 py-50">
+                <div class="d-flex justify-content-start"><span class="mr-75 feather icon-alert-circle"></span><span>No results found.</span></div>
+            </a></li>
+        </ul>
+        <MainMenuComponent />
+        <!-- BEGIN: Content-->
+        <div class="app-content content">
+            <div class="content-overlay"></div>
+            <div class="header-navbar-shadow"></div>
+            <div class="content-wrapper">
+                <div class="content-header row">
                 </div>
+                <slot></slot>
             </div>
-        </nav>
-        <main class="py-4">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <slot></slot>
-                </div>
-            </div>
-        </main>
+        </div>
     </div>
 </template>
 <script>
+    import themeConfig from '@/themeConfig.js'
     export default {
         props: {
             title: String,
@@ -50,9 +35,33 @@
             },
         },
         methods:{
+            toggleClassInBody(className){
+                let body = document.body;
+                if (className === 'dark') {
+                    if (body.className.match('theme-semi-dark')){
+                        body.classList.remove('theme-semi-dark')
+                    }
+                    body.classList.add('theme-dark')
+                } else if (className === 'semi-dark') {
+                    if (body.className.match('theme-dark')) {
+                        body.classList.remove('theme-dark')
+                    }
+                    body.classList.add('theme-semi-dark')
+                } else {
+                    if (body.className.match('theme-dark')){
+                        body.classList.remove('theme-dark')
+                    }
+                    if (body.className.match('theme-semi-dark')) {
+                        body.classList.remove('theme-semi-dark')
+                    }
+                }
+            },
             __(value){
                 return value;
             }
+        },
+        mounted() {
+            this.toggleClassInBody(themeConfig.theme)
         }
     }
 </script>

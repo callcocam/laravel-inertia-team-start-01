@@ -1,6 +1,10 @@
 /node_modules
 /public/hot
 /public/storage
+/public/_dist/admin/css/app.css
+/public/_dist/admin/js/app.js
+/public/js/app.js
+/public/css/app.css
 /storage/*.key
 /vendor
 .env
