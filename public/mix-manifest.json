@@ -1,5 +1,14 @@
 {
     "/_dist/admin/js/app.js": "/_dist/admin/js/app.js",
+    "/_dist/admin/app-assets/css/bootstrap.css": "/_dist/admin/app-assets/css/bootstrap.css",
+    "/_dist/admin/app-assets/css/bootstrap-extended.css": "/_dist/admin/app-assets/css/bootstrap-extended.css",
+    "/_dist/admin/app-assets/css/colors.css": "/_dist/admin/app-assets/css/colors.css",
+    "/_dist/admin/app-assets/css/components.css": "/_dist/admin/app-assets/css/components.css",
+    "/_dist/admin/app-assets/css/themes/dark-layout.css": "/_dist/admin/app-assets/css/themes/dark-layout.css",
+    "/_dist/admin/app-assets/css/themes/semi-dark-layout.css": "/_dist/admin/app-assets/css/themes/semi-dark-layout.css",
+    "/_dist/admin/app-assets/css/core/menu/menu-types/vertical-menu.css": "/_dist/admin/app-assets/css/core/menu/menu-types/vertical-menu.css",
+    "/_dist/admin/app-assets/css/core/colors/palette-gradient.css": "/_dist/admin/app-assets/css/core/colors/palette-gradient.css",
+    "/_dist/admin/app-assets/css/pages/authentication.css": "/_dist/admin/app-assets/css/pages/authentication.css",
     "/_dist/admin/css/app.css": "/_dist/admin/css/app.css",
     "/css/app.css": "/css/app.css",
     "/js/app.js": "/js/app.js"

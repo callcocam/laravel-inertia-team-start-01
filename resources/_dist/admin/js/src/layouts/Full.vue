@@ -1,46 +1,54 @@
 <template>
-    <div>
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="/">
-                    {{title}}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" :aria-label=" __('Toggle navigation')">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/">{{ __('Home') }}</a>
-                        </li>
-                    </ul>
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        <li class="nav-item">
-                            <call-link class="nav-link" :href="route('login')">{{ __('Login') }}</call-link>
-                        </li>
-                        <li class="nav-item">
-                            <call-link class="nav-link" :href="route('register')">{{ __('Register') }}</call-link>
-                        </li>
-                    </ul>
-                </div>
+    <div class="app-content content">
+        <div class="content-wrapper">
+            <div class="content-body">
+                <section class="row flexbox-container">
+                    <div class="col-xl-8 col-11 d-flex justify-content-center">
+                        <div class="card bg-authentication rounded-0 mb-0">
+                            <div class="row m-0">
+                                <div class="col-lg-6 d-lg-block d-none text-center align-self-center px-1 py-0">
+                                    <img :src="image" alt="branding logo">
+                                </div>
+                                <div class="col-lg-6 col-12 p-0">
+                                    <div class="card rounded-0 mb-0 px-2">
+                                        <div class="card-header pb-1">
+                                            <div class="card-title">
+                                                <h4 class="mb-0">{{ title }}</h4>
+                                            </div>
+                                        </div>
+                                        <p class="px-2">{{ helper }}</p>
+                                        <div class="card-content">
+                                            <div class="card-body pt-1">
+                                                <slot></slot>
+                                            </div>
+                                        </div>
+                                        <div class="login-footer">
+                                            <div class="divider">
+                                                <div class="divider-text">OR</div>
+                                            </div>
+                                            <div class="footer-btn d-inline">
+                                                <a href="#" class="btn btn-facebook"><span class="fa fa-facebook"></span></a>
+                                                <a href="#" class="btn btn-twitter white"><span class="fa fa-twitter"></span></a>
+                                                <a href="#" class="btn btn-google"><span class="fa fa-google"></span></a>
+                                                <a href="#" class="btn btn-github"><span class="fa fa-github-alt"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </nav>
-        <main class="py-4">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <slot></slot>
-                </div>
-            </div>
-        </main>
+        </div>
     </div>
 </template>
 <script>
     export default {
         props: {
             title: String,
+            image: String,
+            helper: String,
         },
         watch: {
             title: {

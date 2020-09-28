@@ -35,6 +35,15 @@ mix.webpackConfig({
 });
 
 mix.js('resources/_dist/admin/js/app.js', 'public/_dist/admin/js')
+    .sass('resources/_dist/admin/sass/bootstrap.scss', 'public/_dist/admin/app-assets/css/bootstrap.css')
+    .sass('resources/_dist/admin/sass/bootstrap-extended.scss', 'public/_dist/admin/app-assets/css/bootstrap-extended.css')
+    .sass('resources/_dist/admin/sass/colors.scss', 'public/_dist/admin/app-assets/css/colors.css')
+    .sass('resources/_dist/admin/sass/components.scss', 'public/_dist/admin/app-assets/css/components.css')
+    .sass('resources/_dist/admin/sass/themes/dark-layout.scss', 'public/_dist/admin/app-assets/css/themes/dark-layout.css')
+    .sass('resources/_dist/admin/sass/themes/semi-dark-layout.scss', 'public/_dist/admin/app-assets/css/themes/semi-dark-layout.css')
+    .sass('resources/_dist/admin/sass/core/menu/menu-types/vertical-menu.scss', 'public/_dist/admin/app-assets/css/core/menu/menu-types/vertical-menu.css')
+    .sass('resources/_dist/admin/sass/core/colors/palette-gradient.scss', 'public/_dist/admin/app-assets/css/core/colors/palette-gradient.css')
+    .sass('resources/_dist/admin/sass/pages/authentication.scss', 'public/_dist/admin/app-assets/css/pages/authentication.css')
     .sass('resources/_dist/admin/sass/app.scss', 'public/_dist/admin/css');
 //     .copy('resources/_dist/admin/assets/css/iconfont.css', 'public/_dist/admin/css/iconfont.css')
 //     .copyDirectory('resources/_dist/admin/assets/fonts', 'public/_dist/admin/fonts') ;

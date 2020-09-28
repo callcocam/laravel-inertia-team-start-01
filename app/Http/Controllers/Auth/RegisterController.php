@@ -65,6 +65,7 @@ class RegisterController extends Controller
                 'password'=>Input::make('Password')->type('password')->get(),
                 'password_confirmation'=>Input::make('Password Confirmation','password_confirmation')->type('password')->get(),
                 'terms'=>Input::make('Accept terms','terms')->type('checkbox')
+                    ->label('Accept terms')
                     ->option('yes','yes')
                     ->option('no','no')
                     ->get()

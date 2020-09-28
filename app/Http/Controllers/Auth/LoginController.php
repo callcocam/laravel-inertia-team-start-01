@@ -60,7 +60,9 @@ class LoginController extends Controller
                 'email'=>Input::make('E-Mail Address','email')->type('email')
                     ->get(request()->get('email')),
                 'password'=>Input::make('Password')->type('password')->get(),
-                'remember'=>Input::make('Remember me','remember')->type('checkbox')
+                'remember'=>Input::make('Remember me','remember')
+                    ->label('Remember me')
+                    ->type('checkbox')
                     ->option('yes','yes')
                     ->option('no','no')
                     ->get()

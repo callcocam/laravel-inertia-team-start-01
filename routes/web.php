@@ -20,7 +20,6 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 
     Route::get('', [\App\Http\Controllers\AdminController::class,'index'])->name('admin');
     Route::get('about', [\App\Http\Controllers\AboutController::class,'index'])->name('admin.about');
-
     Route::resource('users', \App\Http\Controllers\UserController::class);
 
 });
